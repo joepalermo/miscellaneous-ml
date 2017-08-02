@@ -32,7 +32,7 @@ theta = np.random.randn(m+1,1)
 h = lambda x: np.dot(x, theta)
 
 # train the model --------------------------------------------------------------
-print "starting values of theta: " + str(theta)
+print("starting values of theta: " + str(theta))
 
 # define the cost function
 c = lambda d: 0.5 * sum((h(x) - y) ** 2 for (x,y) in d)
@@ -45,7 +45,8 @@ for i in range(1, num_epochs+1):
     theta = theta - lr * gradient/num_examples
 
     if print_progress:
-        print "end of epoch " + str(i) + ", value of cost function: " + str(c(d))
+        print("end of epoch " + str(i) \
+            + ", value of cost function: " + str(c(d)))
 
 print("--- %s seconds ---" % (time.time() - start_time))
-print "post-training values of theta: " + str(theta)
+print("post-training values of theta: " + str(theta))

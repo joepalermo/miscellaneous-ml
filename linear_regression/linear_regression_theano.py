@@ -43,12 +43,12 @@ gradients = T.grad(mse_cost, theta)
 train = theano.function([x,y], updates=[(theta, theta - lr * gradients)])
 
 # train ------------------------------------------------------------------------
-print "starting values of theta: " + str(theta.get_value())
+print("starting values of theta: " + str(theta.get_value()))
 
 start_time = time.time()
 
-for i in xrange(num_epochs):
+for i in range(num_epochs):
     train(x_values, y_values)
 
 print("--- %s seconds ---" % (time.time() - start_time))
-print "post-training values of theta: " + str(theta.get_value())
+print("post-training values of theta: " + str(theta.get_value()))

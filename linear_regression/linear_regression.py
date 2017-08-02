@@ -7,11 +7,11 @@ sgd = False
 # print intermediate values of the cost function during learning
 print_progress = False
 # number of training epochs
-num_epochs = 10
+num_epochs = 100
 # number of training examples
 num_examples = 1000
 # lr is the learning rate
-lr = 0.1
+lr = 1
 # m is the number of features
 m = 1
 
@@ -35,7 +35,7 @@ theta = np.random.randn(m+1)
 h = lambda x: np.dot(theta, x)
 
 # train the model --------------------------------------------------------------
-print "starting values of theta: " + str(theta)
+print("starting values of theta: " + str(theta))
 
 # define the cost function
 c = lambda d: 0.5 * sum((h(x) - y) ** 2 for (x,y) in d)
@@ -54,6 +54,7 @@ for i in range(1, num_epochs+1):
         # update the parameters of the model
         theta = theta - lr * gradient/num_examples
     if print_progress:
-        print "end of epoch " + str(i) + ", value of cost function: " + str(c(d))
+        print("end of epoch " + str(i) \
+            + ", value of cost function: " + str(c(d)))
 
-print "post-training values of theta: " + str(theta)
+print("post-training values of theta: " + str(theta))
